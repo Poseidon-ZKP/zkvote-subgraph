@@ -1,0 +1,38 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Vote
+    network: optimism-kovan
+    source:
+      address: "0xbFF54DEA53D243E35389e3f2C7F9c148b0113104"
+      abi: Vote
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - GroupInfo
+        - JoinRequested
+        - MemberAdded
+        - PollAdded
+        - PoolVoteAdded
+        - VoteAdded
+      abis:
+        - name: Vote
+          file: ./abis/Vote.json
+      eventHandlers:
+        - event: GroupInfo(indexed uint256,string,string,string,uint8,address)
+          handler: handleGroupInfo
+        - event: JoinRequested(indexed uint256,indexed uint256)
+          handler: handleJoinRequested
+        - event: MemberAdded(indexed uint256,indexed uint256)
+          handler: handleMemberAdded
+        - event: PollAdded(indexed uint256,indexed uint256,string,string[],string)
+          handler: handlePollAdded
+        - event: PoolVoteAdded(indexed uint256,indexed uint256,string)
+          handler: handlePoolVoteAdded
+        - event: VoteAdded(indexed uint256,bytes32)
+          handler: handleVoteAdded
+      file: ./src/vote.ts
