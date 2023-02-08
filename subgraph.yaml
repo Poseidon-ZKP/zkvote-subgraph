@@ -4,9 +4,9 @@ schema:
 dataSources:
   - kind: ethereum
     name: Vote
-    network: optimism-goerli
+    network: consensys-zkevm
     source:
-      address: "0xbFF54DEA53D243E35389e3f2C7F9c148b0113104"
+      address: "0xA610bE3F3220C932D7215dA9C16f1105F1b278C2"
       abi: Vote
     mapping:
       kind: ethereum/events
