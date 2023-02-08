@@ -4,7 +4,7 @@ schema:
 dataSources:
   - kind: ethereum
     name: Vote
-    network: optimism-kovan
+    network: optimism-goerli
     source:
       address: "0xbFF54DEA53D243E35389e3f2C7F9c148b0113104"
       abi: Vote

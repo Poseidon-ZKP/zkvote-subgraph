@@ -34,7 +34,7 @@ type PollAdded @entity(immutable: true) {
   groupId: BigInt! # uint256
   pollId: BigInt! # uint256
   title: String! # string
-  voteMsgs: [String]! # string[]
+  voteMsgs: [String!]! # string[]
   desc: String! # string
   blockNumber: BigInt!
   blockTimestamp: BigInt!
